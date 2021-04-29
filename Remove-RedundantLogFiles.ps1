@@ -63,7 +63,7 @@ Write-Host "2. Remove found files"
 Write-Host "3. Install as scheduled task (daily)"
 Write-Host "q. Quit"
 
-$answer = Read-Host "Please chose the action"
+$answer = Read-Host "Please choose the action"
 Write-Host
 
 switch ($answer)
