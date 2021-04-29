@@ -40,6 +40,7 @@ Param(
 $ErrorActionPreference = "Stop"
 
 
+
 if (-not $FolderPath) {
     Get-Help $PSCommandPath
     exit
@@ -76,7 +77,6 @@ switch ($answer)
         $argumentString = '-NoProfile -WindowStyle Hidden "' + $PSCommandPath + '" -RemoveFiles -FolderPath "' + $FolderPath + '" -DaysOld ' + $DaysOld
         $action = New-ScheduledTaskAction -Execute 'Powershell.exe' `
           -Argument $argumentString
-          #-Argument "-NoProfile -WindowStyle Hidden '$PSCommandPath' -RemoveFiles -FolderPath '$FolderPath' -DaysOld $DaysOld"
 
         $trigger =  New-ScheduledTaskTrigger -Daily -At 3am
 
