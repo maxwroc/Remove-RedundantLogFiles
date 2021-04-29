@@ -48,7 +48,7 @@ if (-not $FolderPath) {
 
 $FolderPath=$FolderPath.Trim("\")
 
-$filesToRemove = Get-ChildItem –Path $FolderPath -Recurse | Where-Object {($_.LastWriteTime -lt (Get-Date).AddDays(-1 * $DaysOld))} 
+$filesToRemove = Get-ChildItem -Path $FolderPath -Recurse | Where-Object {($_.LastWriteTime -lt (Get-Date).AddDays(-1 * $DaysOld))} 
 $count = ($filesToRemove | measure).Count
 
 if ($RemoveFiles) {
